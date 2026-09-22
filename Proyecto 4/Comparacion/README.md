@@ -1,18 +1,23 @@
-## Getting Started
+# Prácticas Java - Ejercicio 4
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este repositorio contiene la solución al ejercicio 4 desarrollado en **Java** dentro de **Visual Studio Code**.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 📋 Descripción del Ejercicio
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Este ejercicio consta en hacer un programa donde se solicita al usuario **tres números** por consola y se determina cuál de ellos es el mayor, mostrando en pantalla tanto la posición del número (1º, 2º o 3º) como su valor.
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 🔍 Casos Contemplados:
+* **Mayor único:** Evalúa cuál de los tres números es estrictamente superior.
+* **Empate parcial:** Identifica si dos números comparten el valor máximo (ej. 1º y 2º, 1º y 3º, o 2º y 3º).
+* **Igualdad total:** Detecta cuando los tres números introducidos son idénticos.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+---
 
-## Dependency Management
+## 📁 Estructura del Repositorio
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```text
+.
+└── Semana1/
+    └── MayorDeTres.java
