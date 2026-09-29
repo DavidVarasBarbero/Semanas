@@ -1,10 +1,11 @@
+import es.usal.progiii.tools.Esdia;
 public class App {
     public static void main(String[] args) throws Exception {
         Esdia.siOno(null);
-        int numVeces = Esdia.readInt("Ingrese el número de veces que desea ejecutar el programa: ");
+        int numVeces = Esdia.readInt("Ingrese el número de parametros que desea ingresar: ");
 
         if(numVeces <0) {
-            System.err.println("El número de veces debe ser mayor que cero.");
+            System.err.println("El número de parametros debe ser mayor a 0.");
             return;
         }
    
