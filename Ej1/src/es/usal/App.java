@@ -1,3 +1,5 @@
+package es.usal;
+
 import java.util.Scanner;
 
 public class App {
