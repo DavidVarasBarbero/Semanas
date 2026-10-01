@@ -7,9 +7,11 @@ public class App {
         persona1.setAltura(170);
         persona1.setPeso(70.0f);
 
-        System.out.println("Nombre: " + persona1.getNombre());
-        System.out.println("Altura: " + persona1.getAltura());
-        System.out.println("Peso: " + persona1.getPeso());
+           System.out.println(
+            persona1.getNombre() + " "+
+            persona1.getPeso() + " "+
+            persona1.getAltura());
+    }
     }
 }
 
