@@ -1,8 +1,24 @@
 package model;
  public class Person {
+    //Atributos
      private String nombre;
      private int altura;
      private float peso;
+     //Constructores
+        public Person() {
+            nombre="Desconocido";
+            altura=165;
+            peso=70;
+        }
+        public Person(String nombre, int altura, float peso) {
+            this.nombre=nombre;
+            this.altura=altura;
+            this.peso=peso;
+        }
+        public Person(String nombre) {
+            this();
+            this.nombre=nombre;
+        }
 
      public String getNombre() {
          return nombre;
