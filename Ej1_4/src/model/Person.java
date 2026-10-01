@@ -13,7 +13,7 @@ package model;
      public int getAltura() {
          return altura;
      }
-     publuc void setAltura(int altura) {
+     public void setAltura(int altura) {
          if (altura < 0) {
              altura = 0;
          }
