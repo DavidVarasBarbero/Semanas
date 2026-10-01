@@ -19,7 +19,15 @@ package model;
             this();
             this.nombre=nombre;
         }
-
+    //metodos
+    public float IMC(){
+        float alturaenMetros=altura/100;
+        return peso/(alturaenMetros*alturaenMetros);
+    }
+    public String toString() {
+        return "Nombre: " + nombre + ", Altura: " + altura + ", Peso: " + peso;
+    }
+    //Getters y Setters
      public String getNombre() {
          return nombre;
      }

@@ -4,9 +4,8 @@ import model.Person;
 public class App {
     public static void main(String[] args) throws Exception {
         Person persona1 = new Person();
-        System.out.println(persona1.getNombre() + " "+
-            persona1.getPeso() + " "+
-            persona1.getAltura());
+        System.out.println(persona1.toString());
+        System.out.println("El IMC de " + persona1.getNombre() + " es: " + persona1.IMC());
         Person persona4 = new Person("Manolo", 180, 80);
         System.out.println(persona4.getNombre() + " "+
             persona4.getPeso() + " "+
