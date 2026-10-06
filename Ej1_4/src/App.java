@@ -11,20 +11,20 @@ public class App {
             persona4.getPeso() + " "+
             persona4.getAltura());
 
-        persona1.setNombre(Esdia.readString( "Introduce nombre"));
-        persona1.setAltura(Esdia.readInt( "Introduce altura"));
-        persona1.setPeso(Esdia.readFloat("Introduce peso",  0,  150));
+        persona1.setNombre(Esdia.readString( "Introduce nombre "));
+        persona1.setAltura(Esdia.readInt( "Introduce altura "));
+        persona1.setPeso(Esdia.readFloat("Introduce peso ",  0,  150));
 
         Person persona2 = new Person();
-        persona2.setNombre(Esdia.readString("Introduce nombre"));
-        persona2.setAltura(Esdia.readInt("Introduce altura"));
-        persona2.setPeso(Esdia.readFloat("Introduce peso", 0, 150));
+        persona2.setNombre(Esdia.readString("Introduce nombre "));
+        persona2.setAltura(Esdia.readInt("Introduce altura "));
+        persona2.setPeso(Esdia.readFloat("Introduce peso ", 0, 150));
 
 
         Person persona3 = new Person();
-        persona3.setNombre(Esdia.readString( "Introduce nombre"));
-        persona3.setAltura(Esdia.readInt( "Introduce altura"));
-        persona3.setPeso(Esdia.readFloat( "Introduce peso",  0,  150));
+        persona3.setNombre(Esdia.readString( "Introduce nombre "));
+        persona3.setAltura(Esdia.readInt( "Introduce altura "));
+        persona3.setPeso(Esdia.readFloat( "Introduce peso ",  0,  150));
 
 
         Person personaMasAlta = persona1;
