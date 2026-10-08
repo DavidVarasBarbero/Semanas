@@ -7,9 +7,10 @@
         
         {
             "type": "java",
-            "name": "Current File",
+            "name": "App",
             "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "${file}",
+            "args":"123 564.564"
         }
     ]
 }
