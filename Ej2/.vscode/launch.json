@@ -9,8 +9,9 @@
             "type": "java",
             "name": "App",
             "request": "launch",
-            "mainClass": "${file}",
+            "mainClass": "App",
             "args":"Paco 86 184"
         }
     ]
+
 }
