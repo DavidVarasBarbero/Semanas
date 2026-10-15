@@ -17,14 +17,18 @@ public class App {
             cantidades[i]=Esdia.readFloat("Introduce la cantidad de "
             +frutas[i].getNombre());
            }
+           float total=0;
            for(int i=0;i<frutas.length;i++){
             System.out.printf(" %-10s | %8.2f kg | precio con IVA: %3.2f | precio total: %3.2f \n",
             frutas[i].getNombre(),
             cantidades[i],
             frutas[i].getPrecioConIVA(),
             frutas[i].precio(cantidades[i])
+
             );
+            total+=frutas[i].precio(cantidades[i]);
            }
+           System.out.printf("Total: %3.2f\n", total);
 
         }while(Esdia.siOno("¿Quieres hacer otro ticket?"));
         
