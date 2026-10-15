@@ -11,6 +11,7 @@ public class App {
         frutas[1] = new Fruta("Peras", 
         Esdia.readFloat("Introduce el precio de las peras"));
 
+        int numCliente = 0;
         do{
            float[] cantidades=new float[frutas.length];
            for(int i=0;i<frutas.length;i++){
@@ -18,6 +19,8 @@ public class App {
             +frutas[i].getNombre());
            }
            float total=0;
+           numCliente++;
+           System.out.printf("Cliente %d\n", numCliente);
            for(int i=0;i<frutas.length;i++){
             System.out.printf(" %-10s | %8.2f kg | precio con IVA: %3.2f | precio total: %3.2f \n",
             frutas[i].getNombre(),
