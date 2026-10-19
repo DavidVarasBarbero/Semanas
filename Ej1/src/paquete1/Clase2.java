@@ -6,8 +6,8 @@ class Clase2 {
     protected int atributoProtegido;
     public int atributoPublico;
 
-    private void metodoprivado() {}
-    void metodoDefault() {}
-    protected void metodoProtegido() {}
-    public void metodoPublico() {}
+    private void metodoprivado{};
+    void metodoDefault() {};
+    protected void metodoProtegido() {};
+    public void metodoPublico() {};
 }
