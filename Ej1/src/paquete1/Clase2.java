@@ -1,6 +1,6 @@
 package paquete1;
 
-class Clase2 {
+    class Clase2 {
     private int atributoprivado;
     int atributoDefault;
     protected int atributoProtegido;
