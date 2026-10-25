@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "Semana-4",
+			"path": "../Semana-4"
+		}
+	],
+	"settings": {
+		"java.project.referencedLibraries": [
+			"lib/**/*.jar",
+			"c:\\Users\\alce\\Downloads\\biblioteca_progiii.jar",
+			"c:\\Users\\david\\Downloads\\biblioteca_progiii.jar"
+		]
+	}
+}
