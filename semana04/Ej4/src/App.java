@@ -1,6 +1,5 @@
 import es.usal.progiii.tools.Esdia;
 import model.alumno;
-import java.util.Arrays;
 
 public class App {
     public static void main(String[] args) throws Exception {
