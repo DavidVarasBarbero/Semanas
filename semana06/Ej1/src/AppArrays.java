@@ -2,9 +2,8 @@ import es.usal.progiii.tools.Esdia;
 import model.Coche;
 
 public class AppArrays {
-    // Array con tamaño máximo fijo
     private static Coche[] concesionario = new Coche[50];
-    private static int numCoches = 0; // Controla cuántos coches hay realmente
+    private static int numCoches = 0; 
 
     public static void main(String[] args) {
         int opcion;
@@ -74,11 +73,10 @@ public class AppArrays {
         String matricula = Esdia.readString("Introduzca la matrícula del coche a eliminar: ");
         for (int i = 0; i < numCoches; i++) {
             if (concesionario[i].getMatricula().equalsIgnoreCase(matricula)) {
-                // Desplazar todos los elementos a la izquierda para cubrir el hueco
                 for (int j = i; j < numCoches - 1; j++) {
                     concesionario[j] = concesionario[j + 1];
                 }
-                concesionario[numCoches - 1] = null; // Borrar el último duplicado
+                concesionario[numCoches - 1] = null;
                 numCoches--;
                 System.out.println("Coche eliminado del registro.");
                 return;
