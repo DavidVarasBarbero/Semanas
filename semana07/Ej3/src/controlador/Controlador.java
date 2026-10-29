@@ -24,5 +24,8 @@ public class Controlador {
     public ArrayList<Persona> listadoPersonas() {
         return modelo.listadoPersonas();
     }
+    public String eliminarPersona(String nombre){
+        return modelo.eliminarPersona(nombre);
+    }
 
 }

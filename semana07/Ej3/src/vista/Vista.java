@@ -54,8 +54,12 @@ public class Vista {
         System.out.println(msg);
     }
     public void eliminarPersona() {
+        String nombre = readString_ne("Ingrese el nombre de la persona a modificar: ");
+        controlador.eliminarPersona(nombre);
     }
     public void modificarPersona() {
+        String nombre = readString.
+
     }
     public void listarPersonas() {
         ArrayList<Persona> personas = controlador.listadoPersonas();
