@@ -3,6 +3,8 @@ import static es.usal.progiii.tools.Esdia.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import modelo.Persona;
+
 /**
  *
  * 
@@ -30,7 +32,6 @@ public class ArraysCrud {
     // Fijaos que la colección podrá crecer siempre y cuando haya memoria
     // disponible dinámicamente.
     private static ArrayList<Persona> personas = new ArrayList<>();
-
     public static void main(String[] args) {
         int opcion;
         do {

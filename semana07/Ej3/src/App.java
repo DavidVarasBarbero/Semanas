@@ -9,6 +9,7 @@ public class App {
 
         Controlador controlador = new Controlador(modelo, vista);
         vista.setControlador(controlador);
+        controlador.init();
     }
 
 }
