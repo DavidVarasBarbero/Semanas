@@ -27,5 +27,11 @@ public class Controlador {
     public String eliminarPersona(String nombre){
         return modelo.eliminarPersona(nombre);
     }
+    public boolean existePersonaPorNombre(String nombre){
+        return modelo.existePersonaPorNombre(nombre);
+    }
+    public String actualizarDatos(String nombre, Persona persona){
+        return modelo.actualizarDatos(persona);
+    }
 
 }

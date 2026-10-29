@@ -58,7 +58,26 @@ public class Vista {
         controlador.eliminarPersona(nombre);
     }
     public void modificarPersona() {
-        String nombre = readString.
+        String nombre = readString_ne("Ingrese el nombre de la persona a modificar: ");
+        Persona personaAModificar = null;
+        for (Persona persona : personas) {
+            if (persona.getNombre().equals(nombre)) {
+                personaAModificar = persona;
+                break;
+            }
+        }
+        if (personaAModificar != null) {
+            String nuevoNombre = readString_ne("Ingrese el nuevo nombre: ");
+            int nuevaEdad = readInt("Ingrese la nueva edad: ");
+            double nuevaAltura = readDouble("Ingrese la nueva altura (ej. 1.75): ");
+
+            personaAModificar.setNombre(nuevoNombre);
+            personaAModificar.setEdad(nuevaEdad);
+            personaAModificar.setAltura(nuevaAltura);
+        } else {
+            System.out.println("Persona no encontrada.");
+        }
+
 
     }
     public void listarPersonas() {
