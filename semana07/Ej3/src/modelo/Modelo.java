@@ -39,13 +39,15 @@ public class Modelo {
         }
         return false;
     }
-    public String actualizarDatos(String nombre, Persona persona){
+    // En Modelo.java
+    public String actualizarDatos(String nombre, Persona persona) {
         for (Persona personaAModificar : personas) {
             if (personaAModificar.getNombre().equals(nombre)) {
                 personaAModificar.setNombre(persona.getNombre());
                 personaAModificar.setEdad(persona.getEdad());
-                return "Persona actualizada correctamente";
-            }
+                personaAModificar.setAltura(persona.getAltura());
+            return "Persona actualizada correctamente";
+            }   
         }
         return "Persona no encontrada.";
     }

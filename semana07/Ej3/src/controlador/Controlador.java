@@ -30,8 +30,8 @@ public class Controlador {
     public boolean existePersonaPorNombre(String nombre){
         return modelo.existePersonaPorNombre(nombre);
     }
-    public String actualizarDatos(String nombre, Persona persona){
-        return modelo.actualizarDatos(persona);
+    public String actualizarDatos(String nombre, Persona persona) {
+        return modelo.actualizarDatos(nombre, persona); 
     }
 
 }
