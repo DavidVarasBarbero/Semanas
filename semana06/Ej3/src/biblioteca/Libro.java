@@ -1,13 +1,13 @@
 package biblioteca;
 
-public class libros{
+public class Libro{
 
     private final String isbn;
     private String titulo;
     private String autor;
     private int anioPublicacion;
 
-    public libros(String isbn, String titulo, String autor, int anioPublicacion) {
+    public Libro(String isbn, String titulo, String autor, int anioPublicacion) {
         this.isbn = isbn;
         this.titulo = titulo;
         this.autor = autor;
