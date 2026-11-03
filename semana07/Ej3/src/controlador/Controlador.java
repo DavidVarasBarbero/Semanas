@@ -1,7 +1,8 @@
 package controlador;
 import java.util.ArrayList;
-import modelo.Modelo;
-import vista.Vista;
+
+import Modelo.Modelo;
+import Vista.Vista;
 import modelo.Persona;
 
 public class Controlador {

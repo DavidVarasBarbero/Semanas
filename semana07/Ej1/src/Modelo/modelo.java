@@ -3,7 +3,7 @@ package Modelo;
 public class modelo {
     private int numero1;
     private int numero2;
-    private Integer resultadoSuma; 
+    private Integer resultadoSuma;
 
     public void setNumeros(int num1, int num2) {
         this.numero1 = num1;

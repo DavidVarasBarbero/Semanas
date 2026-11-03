@@ -4,10 +4,12 @@ import Vista.vista;
 
 public class App {
     public static void main(String[] args) {
-        modelo modelo = new modelo();
-        vista vista = new vista();
-        controlador controlador = new controlador(modelo, vista);
-        vista.setControlador(controlador);
-        controlador.init();
+        modelo mod = new modelo();
+        vista vis = new vista();
+        
+        controlador ctrl = new controlador(mod, vis);
+
+        vis.setControlador(ctrl);
+        ctrl.init();
     }
 }

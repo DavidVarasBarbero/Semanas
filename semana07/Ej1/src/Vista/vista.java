@@ -4,10 +4,10 @@ import Controlador.controlador;
 import static es.usal.progiii.tools.Esdia.*;
 
 public class vista {
-    private controlador controlador;
-    
-    public void setControlador(controlador controlador) {
-        this.controlador = controlador;
+    private controlador ctrl;
+
+    public void setControlador(controlador ctrl) {
+        this.ctrl = ctrl;
     }
 
     public void mostrarMenu() {
@@ -18,14 +18,15 @@ public class vista {
             System.out.println("2.- Calcular la suma");
             System.out.println("3.- Mostrar el resultado");
             System.out.println("q.- Salir");
-
+            
             opcion = readString_ne("Seleccione una opción: ").toLowerCase();
+
             switch (opcion) {
                 case "1":
                     leerNumeros();
                     break;
                 case "2":
-                    controlador.calcularSuma();
+                    ctrl.calcularSuma(); // Usamos ctrl
                     System.out.println("Suma calculada en el sistema.");
                     break;
                 case "3":
@@ -43,12 +44,12 @@ public class vista {
     private void leerNumeros() {
         int n1 = readInt("Introduzca el primer número: ");
         int n2 = readInt("Introduzca el segundo número: ");
-        controlador.guardarNumeros(n1, n2);
+        ctrl.guardarNumeros(n1, n2); // Usamos ctrl
         System.out.println("Números guardados correctamente.");
     }
 
     private void mostrarResultado() {
-        Integer resultado = controlador.obtenerResultado();
+        Integer resultado = ctrl.obtenerResultado(); // Usamos ctrl
         
         if (resultado == null) {
             System.out.println("Error: Aún no se ha calculado la suma. Elija la opción 2 primero.");

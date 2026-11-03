@@ -1,15 +1,16 @@
 package vista;
-import controlador.Controlador;
 import modelo.Persona;
 
 import static es.usal.progiii.tools.Esdia.*;
 
 import java.util.ArrayList;
 
-public class Vista {
-    private Controlador controlador;
+import controlador.Controlador;
 
-    public void setControlador(Controlador controlador) {
+public class Vista {
+    private controlador controlador;
+
+    public void setControlador(controlador controlador) {
         this.controlador = controlador;
     }
     public void mostrarMenu() {
