@@ -32,20 +32,21 @@ public class Modelo {
         }
     }
     public boolean existePersonaPorNombre(String nombre){
-        return modelo.existePersonaPorNombre(nombre);
+        for (Persona persona : personas) {
+            if (persona.getNombre().equals(nombre)) {
+                return true;
+            }
+        }
+        return false;
     }
     public String actualizarDatos(String nombre, Persona persona){
-        String nombre = readString_ne("Ingrese el nombre de la persona a modificar: ");
-        if (personaAModificar != null) {
-            String nuevoNombre = readString_ne("Ingrese el nuevo nombre: ");
-            int nuevaEdad = readInt("Ingrese la nueva edad: ");
-            double nuevaAltura = readDouble("Ingrese la nueva altura (ej. 1.75): ");
-
-            personaAModificar.setNombre(nuevoNombre);
-            personaAModificar.setEdad(nuevaEdad);
-            personaAModificar.setAltura(nuevaAltura);
-        } else {
-            System.out.println("Persona no encontrada.");
+        for (Persona personaAModificar : personas) {
+            if (personaAModificar.getNombre().equals(nombre)) {
+                personaAModificar.setNombre(persona.getNombre());
+                personaAModificar.setEdad(persona.getEdad());
+                return "Persona actualizada correctamente";
+            }
         }
+        return "Persona no encontrada.";
     }
 }

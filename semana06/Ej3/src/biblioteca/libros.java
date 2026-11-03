@@ -1,0 +1,51 @@
+package biblioteca;
+
+public class libros{
+
+    private final String isbn;
+    private String titulo;
+    private String autor;
+    private int anioPublicacion;
+
+    public libros(String isbn, String titulo, String autor, int anioPublicacion) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anioPublicacion = anioPublicacion;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getAnioPublicacion() {
+        return anioPublicacion;
+    }
+
+    public void setAnioPublicacion(int anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
+    }
+
+    public String getFilaTabla() {
+        return String.format(
+                "| %-20.20s | %-35.35s | %-25.25s | %6d |",
+                isbn, titulo, autor, anioPublicacion
+        );
+    }
+}
