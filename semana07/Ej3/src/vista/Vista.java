@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import controlador.Controlador;
 
 public class Vista {
-    private controlador controlador;
+    private Controlador controlador;
 
-    public void setControlador(controlador controlador) {
+    public void setControlador(Controlador controlador) {
         this.controlador = controlador;
     }
     public void mostrarMenu() {

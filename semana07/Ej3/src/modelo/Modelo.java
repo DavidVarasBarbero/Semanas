@@ -2,7 +2,6 @@ package modelo;
 import static es.usal.progiii.tools.Esdia.*;
 import java.util.ArrayList;
 
-
 public class Modelo {
     private ArrayList<Persona> personas;
     public Modelo() {
@@ -39,7 +38,6 @@ public class Modelo {
         }
         return false;
     }
-    // En Modelo.java
     public String actualizarDatos(String nombre, Persona persona) {
         for (Persona personaAModificar : personas) {
             if (personaAModificar.getNombre().equals(nombre)) {

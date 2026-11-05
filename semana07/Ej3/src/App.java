@@ -1,5 +1,5 @@
-import Modelo.Modelo;
-import Vista.Vista;
+import modelo.Modelo;
+import vista.Vista;
 import controlador.Controlador;
 
 public class App {
@@ -7,7 +7,7 @@ public class App {
         Modelo modelo = new Modelo();
         Vista vista = new Vista();
 
-        controlador controlador = new controlador(modelo, vista);
+        Controlador controlador = new Controlador(modelo, vista);
         vista.setControlador(controlador);
         controlador.init();
     }
