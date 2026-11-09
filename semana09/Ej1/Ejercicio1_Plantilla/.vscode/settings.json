@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "Ejercicio1_Plantilla/lib/biblioteca_progiii.jar",
+        "Ejercicio1_Plantilla/lib/gson-2.10.1.jar",
+        "Ejercicio1_Plantilla/lib/jackson-annotations-2.15.3.jar",
+        "Ejercicio1_Plantilla/lib/jackson-core-2.15.3.jar",
+        "Ejercicio1_Plantilla/lib/jackson-databind-2.15.3.jar",
+        "Ejercicio1_Plantilla/lib/jackson-dataformat-xml-2.15.3.jar",
+        "Ejercicio1_Plantilla/lib/jackson-dataformat-xml-2.16.0-rc1.jar",
+        "Ejercicio1_Plantilla/lib/stax2-api-4.0.0.jar"
+    ]
+}
