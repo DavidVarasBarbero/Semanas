@@ -76,9 +76,16 @@ public class View {
     }
 
     private void importBooksFromCSV() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        int numLibros = c.importBooksFromCSV();
+        if(numLibros < 0){
+            System.out.println("Error al importar libros de CSV");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para importar");
+        }else{
+            System.out.println("Se han importado " + numLibros);
+        }
     }
+    
 
     private void importarBooksXML() {
         // TODO Auto-generated method stub
@@ -101,8 +108,14 @@ public class View {
     }
 
     private void exportarBooksCSV() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exportarBooksCSV'");
+        int  numLibros = c.exportBooksToCSV();
+        if(numLibros < 0){
+            System.out.println("Error al exportar libros a CSV");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para exportar");
+        }else{
+            System.out.println("Se han exportado " + numLibros);
+        }
     }
 
     private void editarLibroDelModelo() {
