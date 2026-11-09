@@ -3,6 +3,7 @@ package com.gestorlibros.model;
 import java.nio.file.Path;
 import java.nio.file.Files;
 import java.util.ArrayList;
+import java.util.List;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.nio.charset.StandardCharsets;
@@ -51,11 +52,41 @@ public class GestorLibrosModel {
 
     // Export and Import data ------------------------------------------
     public int exportBooksToCSV() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        ArrayList<String> lineas = new ArrayList<>();
+        for (Libro l: libros){
+            //Convertir una instancia de libro a una línea de texto con formato "nombre separdor autor etc
+            String LibroEnFormaString = l.asDelimitedString(",");
+            lineas.add(LibroEnFormaString);
+        }
+        try{
+            Files.write(pathToCSV, lineas, StandardCharsets.UTF_8);
+        }catch (IOException e){
+                return -1;
+        }
+        return lineas.size();
     }
 
     public int importBooksFromCSV() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        try{
+            List<String> lineas = Files.readAllLines(pathToCSV, StandardCharsets.UTF_8);
+            int contadorlibros = 0;
+
+            for (String linea: lineas){
+                 //Convertir una instancia de libro a una línea de texto con formato "nombre separdor autor etc
+                Libro l = Libro.fromDelimitedString(linea, ",");//Patron simple factor
+                if(l!= null){
+                    if(libros.contains(l)){
+                        System.out.println("El libro ya existia en el modelo");
+                    }
+                    contadorlibros++;
+                    libros.add(l);
+                }
+            }
+            return contadorlibros;
+        }catch (IOException e){
+            return -1;
+        }
+        
     }
 
     public int exportBooksToJSON() {
