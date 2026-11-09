@@ -88,23 +88,47 @@ public class View {
     
 
     private void importarBooksXML() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'importarBooksXML'");
+        int numLibros = c.importBooksFromXML();
+        if(numLibros < 0){
+            System.out.println("Error al importar libros de XML");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para importar");
+        }else{
+            System.out.println("Se han importado " + numLibros);
+        }
     }
 
     private void importarBooksJSON() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'importarBooksJSON'");
+        int numLibros = c.importBooksFromJSON();
+        if(numLibros < 0){
+            System.out.println("Error al importar libros de JSON");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para importar");
+        }else{
+            System.out.println("Se han importado " + numLibros);
+        }
     }
 
     private void exportBooksToXML() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exportBooksToXML'");
+        int  numLibros = c.exportBooksToXML();
+        if(numLibros < 0){
+            System.out.println("Error al exportar libros a XML");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para exportar");
+        }else{
+            System.out.println("Se han exportado " + numLibros);
+        }
     }
 
     private void exportarBooksJSON() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exportarBooksJSON'");
+        int numLibros = c.exportBooksToJSON();
+        if(numLibros < 0){
+            System.out.println("Error al exportar libros a JSON");
+        }else if(numLibros == 0){
+            System.out.println("No hay libros para exportar");
+        }else{
+            System.out.println("Se han exportado " + numLibros);
+        }
     }
 
     private void exportarBooksCSV() {

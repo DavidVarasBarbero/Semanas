@@ -91,11 +91,40 @@ public class GestorLibrosModel {
     }
 
     public int exportBooksToJSON() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        Gson gson = new Gson();
+        String json = gson.toJson(libros);
+        try{
+            Files.write(pathToJSON, json.getBytes(StandardCharsets.UTF_8));
+            return libros.size();
+        }catch (IOException e){
+            return -1;
+        }
     }
 
     public int importBooksFromJSON() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        //Leeemos el fichero lo convertimos a una string y luego con esa srting lo convertimos a un arryalist de libros
+        Gson gson = new Gson();
+        String json;
+        try{
+            byte[] bytes =Files.readAllBytes(pathToJSON);
+            json = new String(bytes, StandardCharsets.UTF_8);
+            Type listType = new TypeToken<ArrayList<Libro>>(){}.getType();
+            ArrayList<Libro> librosImportados =gson.fromJson(json, listType);
+            int contadorlibros = 0;
+            for (Libro l: librosImportados){
+                if(libros.contains(l)){
+                    System.out.println("El libro ya existia en el modelo");
+                }else{
+                    libros.add(l);
+                    contadorlibros++;
+
+                }
+            }
+            return contadorlibros;
+
+        }catch (IOException e){
+            return -1;
+        }
     }
 
     public int importBooksFromXML() {
