@@ -14,6 +14,7 @@ import java.io.ObjectInputStream;
 
 import es.usal.progiii.tools.Rutas;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -128,11 +129,40 @@ public class GestorLibrosModel {
     }
 
     public int importBooksFromXML() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");  
+        XmlMapper xmlMapper = new XmlMapper();
+        String xml; //Leer archivo
+        try{
+            byte[] bytes = Files.readAllBytes(pathToXML);
+            xml = new String(bytes, StandardCharsets.UTF_8);
+            ArrayList<Libro> librosImportados = xmlMapper.readValue(
+                xml,
+                new TypeReference<ArrayList<Libro>>() {}
+            );
+            int contadorlibros = 0;
+            for (Libro l: librosImportados){
+                if(libros.contains(l)){
+                    System.out.println("El libro ya existia en el modelo");
+                }else{
+                    libros.add(l);
+                    contadorlibros++;
+                }
+            }
+            return contadorlibros;
+        }catch (IOException e){
+            return -1;
+        }
+
     }
 
     public int exportBooksToXML() {
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        XmlMapper xmlMapper = new XmlMapper();
+        try {
+            String xml = xmlMapper.writeValueAsString(libros);
+            Files.write(pathToXML, xml.getBytes(StandardCharsets.UTF_8));
+            return libros.size();
+            }catch (IOException e){
+            return -1;
+        }
     }
 
     // Serialization and Deserialization ------------------------------------------
