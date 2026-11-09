@@ -69,7 +69,7 @@ public class GestorLibrosModel {
     public int importBooksFromCSV() {
         try{
             List<String> lineas = Files.readAllLines(pathToCSV, StandardCharsets.UTF_8);
-            
+
             int contadorlibros = 0;
 
             for (String linea: lineas){
@@ -108,11 +108,32 @@ public class GestorLibrosModel {
 
     // Serialization and Deserialization ------------------------------------------
     public int saveStateOfTheApp(){
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        //Exportacion binaria
+        try{
+            FileOutputStream fileOutputStream = new FileOutputStream(pathToBinary.toFile());
+            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
+            objectOutputStream.writeObject(libros);//Cualquier objecto que implemente Serializable
+            objectOutputStream.close();
+
+            return libros.size();
+        }catch (IOException e){
+            return -1;
+        }
     }
 
     public int loadStateOfTheApp(){
-        throw new UnsupportedOperationException("Unimplemented method 'importBooksFromCSV'");
+        //Importacion binaria
+        try{
+            FileInputStream fileInputStream = new FileInputStream(pathToBinary.toFile());
+            ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
+            ArrayList<Libro> librosImportados = (ArrayList<Libro>) objectInputStream.readObject();
+            objectInputStream.close();
+            libros = librosImportados;
+
+            return librosImportados.size();
+        }catch (IOException | ClassNotFoundException e){
+            return -1;
+        }
     }
 
 

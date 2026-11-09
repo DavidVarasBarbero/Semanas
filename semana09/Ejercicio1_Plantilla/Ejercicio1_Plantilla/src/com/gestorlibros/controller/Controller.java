@@ -21,12 +21,23 @@ public class Controller {
     public void initApp() {
 
         // Load data
-        
+        int numLibros = m.loadStateOfTheApp();
+        if(numLibros<0){
+            v.showInfoMessage("No se ha podido cargar el archivo");
+        }else{
+            v.showInfoMessage("Se han cargado "+numLibros+" libros");
+        }
 
         // Show Menu
         v.startMenu();
 
         //Save data
+        numLibros = m.saveStateOfTheApp();
+        if(numLibros<0){
+            v.showInfoMessage("No se ha podido guardar el archivo binario");
+        }else{
+            v.showInfoMessage("Se ha guardado el archivo binario");
+        }
     }
 
     public ArrayList<Libro> getLibros() {
