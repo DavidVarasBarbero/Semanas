@@ -166,19 +166,19 @@ public class GestorLibrosModel {
     }
 
     // Serialization and Deserialization ------------------------------------------
-    public int saveStateOfTheApp(){
-        //Exportacion binaria
-        try{
-            FileOutputStream fileOutputStream = new FileOutputStream(pathToBinary.toFile());
-            ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeObject(libros);//Cualquier objecto que implemente Serializable
-            objectOutputStream.close();
-
-            return libros.size();
-        }catch (IOException e){
+    public int saveStateOfTheApp() {
+        try {
+            Files.createDirectories(pathToBinary.getParent());
+            try (FileOutputStream fileOutputStream = new FileOutputStream(pathToBinary.toFile());
+                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream)) {
+                objectOutputStream.writeObject(libros);
+                return libros.size();
+            }
+        } catch (IOException e) {
             return -1;
         }
     }
+    
 
     public int loadStateOfTheApp(){
         //Importacion binaria
