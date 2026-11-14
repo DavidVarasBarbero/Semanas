@@ -5,14 +5,24 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.File;
-import es.usal.progiii.tools.*;
+import es.usal.progiii.tools.Rutas;
 
 
 public class Modelo {
-    Path RutaArchivoDatos = Rutas.pathToFileOnDesktop();
+    Path RutaArchivoDatos = Rutas.pathToFileOnDesktop("datos.txt");
     ArrayList<Persona> personas;
     public Modelo(){
         personas = new ArrayList<>();
+    }
+    public Path getRutasArchivoDatos() {
+        return RutaArchivoDatos;
+    }
+
+    public Path getRutaArchivoEscritorio(String nombreArchivo) {
+        return Rutas.pathToFileOnDesktop(nombreArchivo);
+    }
+    public ArrayList<Persona> getPersonas() {
+        return new ArrayList<>(this.personas);
     }
     //negativo si es error, positivo el numero de registro importados
     public int CargadeDatosDelimitado(Path ruta){
